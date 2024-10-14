@@ -90,14 +90,14 @@ def download():
     if 'converted_zip' in session:
         return render_template('download.html')
     else:
-        return redirect(url_for('index_two'))
+        return redirect(url_for('index'))
 
 @app.route('/download-file')
 def download_file():
     if 'converted_zip' in session:
         return send_file(session['converted_zip'], as_attachment=True)
     else:
-        return redirect(url_for('index_two'))
+        return redirect(url_for('index'))
 
 if __name__ == '__main__':
     # app.run(debug=True)
